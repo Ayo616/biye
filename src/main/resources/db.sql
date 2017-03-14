@@ -16,3 +16,4 @@ CREATE TABLE `t_user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
+##初始化项目时自动建立这张表

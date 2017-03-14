@@ -23,7 +23,7 @@ import java.util.Properties;
  */
 
 @Configuration
-@EnableJpaRepositories("com.springapp.repository")
+@EnableJpaRepositories("main.springapp.repository")
 @PropertySource("classpath:conf/application.properties")
 public class DataBaseConfig {
     private static final String PROPERTY_NAME_DATABASE_DRIVER = "db.driver";
@@ -71,14 +71,14 @@ public class DataBaseConfig {
         return new JdbcTemplate(dataSource());
     }
 
-    /**
-     * Check if the Role Table is empty.
-     *
-     * @return Boolean
-     */
-    private boolean isRoleTableEmpty() {
-        return this.jdbcTemplate().queryForObject("select count(*) from roles", Integer.class) == 0;
-    }
+//    /**
+//     * Check if the Role Table is empty.
+//     *
+//     * @return Boolean
+//     */
+//    private boolean isRoleTableEmpty() {
+//        return this.jdbcTemplate().queryForObject("select count(*) from roles", Integer.class) == 0;
+//    }
 
     /**
      * Database seed.
@@ -100,9 +100,9 @@ public class DataBaseConfig {
         dataSourceInitializer.setDataSource(dataSource);
         dataSourceInitializer.setDatabasePopulator(databasePopulator);
 
-        if (!this.isRoleTableEmpty()) {
-            dataSourceInitializer.setEnabled(false);
-        }
+//        if (!this.isRoleTableEmpty()) {
+//            dataSourceInitializer.setEnabled(false);
+//        }
         return dataSourceInitializer;
     }
 

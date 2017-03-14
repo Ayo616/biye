@@ -21,7 +21,7 @@ import javax.annotation.Resource;
         basePackages = {
                 "main.springapp.controller",
                 "main.springapp.service",
-                "main.springapp.security"
+                "main.springapp.security",
         })
 @PropertySource("classpath:conf/application.properties")
 @Import({ DataBaseConfig.class})
