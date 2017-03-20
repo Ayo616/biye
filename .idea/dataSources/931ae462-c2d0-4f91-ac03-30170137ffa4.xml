@@ -11,89 +11,151 @@
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="sys"/>
     <schema id="7" parent="1" name="sysu_suyuan"/>
-    <table id="8" parent="2" name="t_user"/>
-    <table id="9" parent="2" name="test"/>
-    <table id="10" parent="2" name="test_model"/>
-    <column id="11" parent="8" name="id">
+    <table id="8" parent="2" name="dfactor"/>
+    <table id="9" parent="2" name="t_user"/>
+    <table id="10" parent="2" name="test"/>
+    <table id="11" parent="2" name="test_model"/>
+    <column id="12" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="13" parent="8" name="airconditioner">
+      <Position>2</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="14" parent="8" name="hall_light">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="15" parent="8" name="humidity">
+      <Position>4</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="16" parent="8" name="illumination">
+      <Position>5</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="17" parent="8" name="intelligence">
+      <Position>6</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="18" parent="8" name="loops">
+      <Position>7</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="19" parent="8" name="pm">
+      <Position>8</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="20" parent="8" name="rfid">
+      <Position>9</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="21" parent="8" name="room_light">
+      <Position>10</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="22" parent="8" name="smoke">
+      <Position>11</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="23" parent="8" name="temperature">
+      <Position>12</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="24" parent="8" name="video">
+      <Position>13</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="25" parent="8" name="window">
+      <Position>14</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <key id="26" parent="8" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="9" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="12" parent="8" name="username">
+    <column id="28" parent="9" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="13" parent="8" name="password">
+    <column id="29" parent="9" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="14" parent="8" name="user_type">
+    <column id="30" parent="9" name="user_type">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="15" parent="8" name="telephone">
+    <column id="31" parent="9" name="telephone">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="16" parent="8" name="email">
+    <column id="32" parent="9" name="email">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="17" parent="8" name="realname">
+    <column id="33" parent="9" name="realname">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="18" parent="8" name="nickname">
+    <column id="34" parent="9" name="nickname">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="19" parent="8" name="create_time">
+    <column id="35" parent="9" name="create_time">
       <Position>9</Position>
       <DataType>timestamp|0</DataType>
     </column>
-    <column id="20" parent="8" name="last_login_time">
+    <column id="36" parent="9" name="last_login_time">
       <Position>10</Position>
       <DataType>timestamp|0</DataType>
     </column>
-    <column id="21" parent="8" name="update_time">
+    <column id="37" parent="9" name="update_time">
       <Position>11</Position>
       <DataType>timestamp|0</DataType>
     </column>
-    <column id="22" parent="8" name="nick_name">
+    <column id="38" parent="9" name="nick_name">
       <Position>12</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="23" parent="8" name="real_name">
+    <column id="39" parent="9" name="real_name">
       <Position>13</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="24" parent="8" name="PRIMARY">
+    <key id="40" parent="9" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="25" parent="9" name="name">
+    <column id="41" parent="10" name="name">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="26" parent="9" name="number">
+    <column id="42" parent="10" name="number">
       <Position>2</Position>
       <DataType>mediumtext|0</DataType>
     </column>
-    <column id="27" parent="10" name="test_id">
+    <column id="43" parent="11" name="test_id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="28" parent="10" name="test_str">
+    <column id="44" parent="11" name="test_str">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="29" parent="10" name="PRIMARY">
+    <key id="45" parent="11" name="PRIMARY">
       <ColNames>test_id</ColNames>
       <Primary>1</Primary>
     </key>
