@@ -13,46 +13,60 @@ public class Dfactor implements Serializable{
 
     private static final long serialVersionUID = 3921004226042659427L;
 
+    //实验箱ID
     @Id
     @Column(name = "id")
     private Long id;
 
+    //温度数据
     @Column(name = "temperature")
     private Long temperature;
 
+    //湿度数据
     @Column(name = "humidity")
     private Long humidity;
 
+    //光照数据
     @Column(name = "illumination")
     private Long illumination;
 
+    //PM2.5数据
     @Column(name = "pm")
     private Long pm;
 
+    //烟雾数据
     @Column(name = "smoke")
     private  Long smoke;
 
+    //房间灯状态
     @Column(name = "room_light")
     private  Boolean room_light;
 
+    //大厅灯状态
     @Column(name = "hall_light")
     private  Boolean hall_light;
 
+    //空调开关状态
     @Column(name = "airconditioner")
     private  Boolean airconditioner;
 
+    //窗户开关状态
     @Column(name = "window")
     private  Boolean window;
 
+    //视频开关状态
     @Column(name = "video")
     private  Boolean video;
 
+    //智能模式开关状态
     @Column(name = "intelligence")
     private  Boolean intelligence;
 
+    //rfid开关状态
     @Column(name = "rfid")
     private  Boolean rfid;
 
+    //循环状态
     @Column(name = "loops")
     private  Boolean loops;
 

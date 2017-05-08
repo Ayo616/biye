@@ -1,8 +1,8 @@
 package main.springapp.config.core;
 
 import main.springapp.config.WebAppConfig;
+import main.springapp.security.SimpleCORSFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.Filter;
@@ -35,6 +35,7 @@ public class Initializer extends AbstractAnnotationConfigDispatcherServletInitia
         characterEncodingFilter.setEncoding("UTF-8");
         characterEncodingFilter.setForceEncoding(true);
         return new Filter[]{
+                new SimpleCORSFilter(),
                 characterEncodingFilter,
         };
     }

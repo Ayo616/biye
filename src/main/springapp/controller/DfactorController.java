@@ -1,6 +1,5 @@
 package main.springapp.controller;
 
-import main.springapp.dto.FactorDTO;
 import main.springapp.model.Dfactor;
 import main.springapp.service.ServiceInterface.DfactorService;
 import org.apache.commons.io.FileUtils;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.util.List;
 
@@ -25,11 +25,11 @@ public class DfactorController {
     private DfactorService dfactorService;
 
         /**
-             * @api {get} http://localhost/smarthome/{id}   根据查询设备信息
+             * @api {get} http://localhost/smarthome/{id}   根据设备ID查询设备信息
              * @apiSampleRequest off
              * @apiHeader {String} Content-type application/json;charset=UTF-8.
              * @apiName  Querry
-             * @apiGroup software
+             * @apiGroup other
              *
              * @apiParam {long} id  设备ID.
              *
@@ -65,7 +65,7 @@ public class DfactorController {
      * @apiSampleRequest off
      * @apiHeader {String} Content-type application/json;charset=UTF-8.
      * @apiName  QuerryAll
-     * @apiGroup software
+     * @apiGroup other
      *
      * *@apiSuccessExample	Success:
 
@@ -165,9 +165,20 @@ public class DfactorController {
     @RequestMapping(value = "/picture",method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
     public Boolean picture(@RequestParam(value = "img")MultipartFile img) throws  Exception{
-        File file = new File("F:\\biye\\src\\main\\webapp\\image\\test.png");
+        File file = new File(" F:\\biye\\src\\main\\webapp\\image\\test.png");
         FileUtils.copyInputStreamToFile(img.getInputStream(),file);
         return  true;
     }
+
+    @RequestMapping(value = "/picture2",method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.OK)
+    public Boolean picture(@RequestBody byte[] img) throws  Exception{
+        File file = new File("F:\\biye\\src\\main\\webapp\\image\\test.png");
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(img);
+        FileUtils.copyInputStreamToFile(byteArrayInputStream,file);
+        return  true;
+    }
+
+
 
 }
